@@ -2,6 +2,7 @@ package struggle.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author chenruizhou
@@ -18,6 +19,14 @@ public class HelloController {
     @RequestMapping("/target")
     public String toTarget() {
         return "target";
+    }
+
+    @RequestMapping("/testModelAndView")
+    public ModelAndView testModelAndView() {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("testAttributeName", "hello, modelAndView");
+        mav.setViewName("success");
+        return mav;
     }
 
 }
