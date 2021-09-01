@@ -9,5 +9,17 @@
 <a th:href="@{/target}">访问目标页面target.html</a>
 <br>
 <a th:href="@{/testModelAndView}">测试ModelAndView</a>
+<br>
+<br>
+<form th:action="@{/testPutRequestMethod}" method="post">
+    <input type="hidden" name="_method" value="put"/>
+    用户名：<label>
+    <input type="text" name="username" />
+</label>
+    密码：<label>
+    <input type="password" name="password" />
+</label>
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>
