@@ -29,4 +29,18 @@
     <!--开启mvc注解驱动-->
     <mvc:annotation-driven />
 
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/"/>
+            <ref bean="myFirstInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/"/>
+            <ref bean="mySecondInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>
