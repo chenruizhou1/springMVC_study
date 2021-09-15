@@ -2,10 +2,7 @@ package struggle.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
@@ -50,6 +47,11 @@ public class HelloController {
         map.put("message", "测试ResponseEntity成功！");
         map.put("data", list);
         return new ResponseEntity<>(map, HttpStatus.OK);
+    }
+
+    @GetMapping("/testExceptionResolver")
+    public void testExceptionResolver() {
+        int a = 1 / 0;
     }
 
 
